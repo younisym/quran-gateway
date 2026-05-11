@@ -1,0 +1,1351 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Quranic Gateway | بوابة القرآن</title>
+<meta name="description" content="Learn Arabic, Quran & Islamic Studies with Certified Scholars. Flexible online learning for students worldwide.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Amiri:wght@400;700&family=DM+Sans:wght@300;400;500;600&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+<script>
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        green: {
+          950: '#0a1f14',
+          900: '#0d2b1a',
+          800: '#144d2e',
+          700: '#1a6b3c',
+          600: '#1f8048',
+          500: '#27a05a',
+        },
+        gold: {
+          300: '#f5d78e',
+          400: '#e9c46a',
+          500: '#d4a843',
+          600: '#b8891e',
+          700: '#9c6e0d',
+        }
+      },
+      fontFamily: {
+        display: ['Playfair Display', 'serif'],
+        arabic: ['Noto Naskh Arabic', 'Amiri', 'serif'],
+        body: ['DM Sans', 'sans-serif'],
+      }
+    }
+  }
+}
+</script>
+<style>
+  :root {
+    --green-950: #0a1f14;
+    --green-900: #0d2b1a;
+    --green-800: #144d2e;
+    --green-700: #1a6b3c;
+    --green-600: #1f8048;
+    --gold-400: #e9c46a;
+    --gold-500: #d4a843;
+    --gold-300: #f5d78e;
+    --cream: #faf8f3;
+    --light: #f5f3ee;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; }
+  body {
+    font-family: 'DM Sans', sans-serif;
+    background: var(--cream);
+    color: #1a2e1f;
+    overflow-x: hidden;
+  }
+
+  [lang="ar"] body, body.ar {
+    font-family: 'Noto Naskh Arabic', 'Amiri', serif;
+    direction: rtl;
+  }
+
+  .font-ar { font-family: 'Noto Naskh Arabic', 'Amiri', serif; }
+
+  /* Geometric background pattern */
+  .geo-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23d4a843' fill-opacity='0.06'%3E%3Cpath d='M30 0l8.66 5v10L30 20l-8.66-5V5zm0 40l8.66 5v10L30 60l-8.66-5V45zM0 20l8.66 5v10L0 40l-8.66-5V25zm60 0l8.66 5v10L60 40l-8.66-5V25z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  .star-pattern {
+    background-image: url("data:image/svg+xml,%3Csvg width='80' height='80' viewBox='0 0 80 80' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d4a843' fill-opacity='0.05'%3E%3Cpath d='M40 0l5 15h15l-12 9 5 15-13-9-13 9 5-15-12-9h15zm0 50l5 15h15l-12 9 5 15-13-9-13 9 5-15-12-9h15z'/%3E%3C/g%3E%3C/svg%3E");
+  }
+
+  /* Navbar */
+  #navbar {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 1000;
+    transition: all 0.4s ease;
+    padding: 1rem 0;
+  }
+  #navbar.scrolled {
+    background: rgba(10, 31, 20, 0.97);
+    backdrop-filter: blur(20px);
+    padding: 0.6rem 0;
+    box-shadow: 0 4px 30px rgba(0,0,0,0.3);
+  }
+  #navbar.top {
+    background: transparent;
+  }
+
+  /* Divider line with star */
+  .gold-divider {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin: 0 auto;
+    max-width: 300px;
+  }
+  .gold-divider::before, .gold-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-500));
+  }
+  .gold-divider::after {
+    background: linear-gradient(to left, transparent, var(--gold-500));
+  }
+
+  /* Hero */
+  .hero-bg {
+    background: linear-gradient(135deg, #0a1f14 0%, #0d2b1a 40%, #144d2e 70%, #1a3a22 100%);
+    position: relative;
+    overflow: hidden;
+    min-height: 100vh;
+  }
+
+  .hero-bg::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg width='120' height='120' viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23d4a843' stroke-opacity='0.08' stroke-width='0.5'%3E%3Cpolygon points='60,5 70,35 100,35 77,53 85,83 60,65 35,83 43,53 20,35 50,35'/%3E%3C/g%3E%3C/svg%3E");
+    background-size: 120px 120px;
+  }
+
+  .hero-glow {
+    position: absolute;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(212,168,67,0.15) 0%, transparent 70%);
+    top: -100px;
+    right: -100px;
+    pointer-events: none;
+  }
+
+  .hero-glow-2 {
+    position: absolute;
+    width: 400px;
+    height: 400px;
+    background: radial-gradient(circle, rgba(27,107,60,0.3) 0%, transparent 70%);
+    bottom: 0;
+    left: -50px;
+    pointer-events: none;
+  }
+
+  /* Arc decoration */
+  .arabic-arch {
+    width: 280px;
+    height: 340px;
+    border: 2px solid rgba(212,168,67,0.2);
+    border-radius: 50% 50% 0 0 / 60% 60% 0 0;
+    position: relative;
+    margin: 0 auto;
+    overflow: hidden;
+    background: linear-gradient(to bottom, rgba(212,168,67,0.05), rgba(27,107,60,0.1));
+  }
+
+  /* Glass card */
+  .glass {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(212,168,67,0.15);
+    backdrop-filter: blur(10px);
+  }
+
+  .glass-light {
+    background: rgba(255,255,255,0.9);
+    border: 1px solid rgba(212,168,67,0.2);
+    box-shadow: 0 8px 40px rgba(10,31,20,0.08);
+  }
+
+  /* Buttons */
+  .btn-gold {
+    background: linear-gradient(135deg, #d4a843, #e9c46a, #d4a843);
+    background-size: 200% auto;
+    color: #0a1f14;
+    font-weight: 600;
+    border: none;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    letter-spacing: 0.02em;
+  }
+  .btn-gold:hover {
+    background-position: right center;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(212,168,67,0.4);
+  }
+
+  .btn-outline {
+    border: 1.5px solid rgba(212,168,67,0.6);
+    color: var(--gold-300);
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+  }
+  .btn-outline:hover {
+    background: rgba(212,168,67,0.1);
+    border-color: var(--gold-400);
+  }
+
+  /* Service cards */
+  .service-card {
+    background: white;
+    border: 1px solid rgba(212,168,67,0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+  }
+  .service-card::before {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--green-700), var(--gold-500));
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+  }
+  .service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(10,31,20,0.12);
+    border-color: rgba(212,168,67,0.3);
+  }
+  .service-card:hover::before { transform: scaleX(1); }
+
+  .service-icon {
+    width: 56px;
+    height: 56px;
+    background: linear-gradient(135deg, rgba(10,31,20,0.08), rgba(212,168,67,0.12));
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    border: 1px solid rgba(212,168,67,0.2);
+    margin-bottom: 1rem;
+  }
+
+  /* Feature cards */
+  .feature-card {
+    background: white;
+    border: 1px solid rgba(10,31,20,0.08);
+    transition: all 0.3s ease;
+  }
+  .feature-card:hover {
+    border-color: rgba(212,168,67,0.3);
+    box-shadow: 0 10px 30px rgba(10,31,20,0.08);
+  }
+
+  /* Steps */
+  .step-indicator {
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+  }
+  .step-dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: #d1d5db;
+    transition: all 0.3s ease;
+    cursor: pointer;
+  }
+  .step-dot.active {
+    background: var(--green-700);
+    width: 28px;
+    border-radius: 5px;
+  }
+
+  /* Accordion */
+  .faq-item {
+    border: 1px solid rgba(10,31,20,0.1);
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 0.75rem;
+    transition: all 0.3s ease;
+  }
+  .faq-item.open {
+    border-color: rgba(212,168,67,0.3);
+    box-shadow: 0 4px 20px rgba(10,31,20,0.06);
+  }
+  .faq-trigger {
+    width: 100%;
+    text-align: left;
+    padding: 1.25rem 1.5rem;
+    background: white;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 500;
+    color: #1a2e1f;
+    font-size: 1rem;
+  }
+  .faq-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease;
+    background: white;
+    color: #4a6352;
+    padding: 0 1.5rem;
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+  .faq-content.open {
+    max-height: 200px;
+    padding-bottom: 1.25rem;
+  }
+
+  /* Testimonials */
+  .testimonial-card {
+    background: white;
+    border: 1px solid rgba(10,31,20,0.08);
+    border-radius: 16px;
+    padding: 1.75rem;
+    transition: all 0.3s ease;
+  }
+  .testimonial-card:hover {
+    box-shadow: 0 12px 40px rgba(10,31,20,0.1);
+    border-color: rgba(212,168,67,0.25);
+  }
+
+  /* Form */
+  .form-step { display: none; }
+  .form-step.active { display: block; }
+
+  .form-input {
+    width: 100%;
+    padding: 0.875rem 1rem;
+    border: 1.5px solid rgba(10,31,20,0.15);
+    border-radius: 10px;
+    font-size: 0.95rem;
+    color: #1a2e1f;
+    background: white;
+    transition: all 0.3s ease;
+    outline: none;
+    font-family: inherit;
+  }
+  .form-input:focus {
+    border-color: var(--green-700);
+    box-shadow: 0 0 0 3px rgba(26,107,60,0.1);
+  }
+  .form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #2d5040;
+    font-size: 0.9rem;
+  }
+
+  /* Progress bar */
+  .progress-bar {
+    height: 3px;
+    background: var(--green-700);
+    transition: width 0.4s ease;
+    border-radius: 99px;
+  }
+
+  /* Floating WA */
+  .float-wa {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    z-index: 999;
+    width: 58px;
+    height: 58px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 8px 30px rgba(37,211,102,0.4);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    animation: pulse-wa 2.5s infinite;
+  }
+  .float-wa:hover {
+    transform: scale(1.1);
+    box-shadow: 0 12px 40px rgba(37,211,102,0.5);
+  }
+  @keyframes pulse-wa {
+    0%, 100% { box-shadow: 0 8px 30px rgba(37,211,102,0.4); }
+    50% { box-shadow: 0 8px 40px rgba(37,211,102,0.7); }
+  }
+
+  /* Animations */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .fade-up { animation: fadeUp 0.7s ease forwards; }
+  .fade-up-2 { animation: fadeUp 0.7s 0.15s ease forwards; opacity: 0; }
+  .fade-up-3 { animation: fadeUp 0.7s 0.3s ease forwards; opacity: 0; }
+  .fade-up-4 { animation: fadeUp 0.7s 0.45s ease forwards; opacity: 0; }
+
+  /* Lang toggle */
+  .lang-btn {
+    padding: 0.35rem 0.85rem;
+    border-radius: 999px;
+    font-size: 0.82rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border: 1.5px solid rgba(212,168,67,0.4);
+    color: var(--gold-300);
+    background: transparent;
+  }
+  .lang-btn.active {
+    background: var(--gold-500);
+    color: var(--green-950);
+    border-color: var(--gold-500);
+  }
+
+  /* Section heading */
+  .section-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(10,31,20,0.07);
+    border: 1px solid rgba(212,168,67,0.25);
+    border-radius: 999px;
+    padding: 0.35rem 1rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: var(--green-700);
+    margin-bottom: 1rem;
+  }
+
+  /* RTL support */
+  body.rtl {
+    direction: rtl;
+    text-align: right;
+  }
+  body.rtl .float-wa { right: auto; left: 2rem; }
+  body.rtl .faq-trigger { text-align: right; }
+  body.rtl select, body.rtl input { text-align: right; }
+
+  /* Mobile nav */
+  #mobile-menu {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(10,31,20,0.98);
+    z-index: 999;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+  }
+  #mobile-menu.open { display: flex; }
+
+  /* Ornamental separator */
+  .ornament {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    color: var(--gold-500);
+    font-size: 1.2rem;
+  }
+  .ornament::before, .ornament::after {
+    content: '';
+    flex: 1;
+    max-width: 80px;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold-500));
+  }
+  .ornament::after {
+    background: linear-gradient(270deg, transparent, var(--gold-500));
+  }
+
+  select.form-input option { background: white; color: #1a2e1f; }
+
+  /* Smooth scroll offset for fixed navbar */
+  section { scroll-margin-top: 80px; }
+
+  @media (max-width: 768px) {
+    .float-wa { bottom: 1.5rem; right: 1.5rem; }
+    body.rtl .float-wa { right: auto; left: 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- FLOATING WHATSAPP -->
+<a href="https://wa.me/201008394649" target="_blank" class="float-wa" aria-label="WhatsApp">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+  </svg>
+</a>
+
+<!-- MOBILE MENU -->
+<div id="mobile-menu">
+  <button onclick="closeMobileMenu()" class="absolute top-6 right-6 text-white text-3xl">×</button>
+  <nav class="flex flex-col items-center gap-6">
+    <a href="#about" onclick="closeMobileMenu()" class="text-white text-xl font-medium hover:text-yellow-400 transition" data-en="About" data-ar="عن الأكاديمية">About</a>
+    <a href="#services" onclick="closeMobileMenu()" class="text-white text-xl font-medium hover:text-yellow-400 transition" data-en="Programs" data-ar="البرامج">Programs</a>
+    <a href="#why-us" onclick="closeMobileMenu()" class="text-white text-xl font-medium hover:text-yellow-400 transition" data-en="Why Us" data-ar="لماذا نحن">Why Us</a>
+    <a href="#enroll" onclick="closeMobileMenu()" class="text-white text-xl font-medium hover:text-yellow-400 transition" data-en="Enroll" data-ar="التسجيل">Enroll</a>
+    <a href="#contact" onclick="closeMobileMenu()" class="text-white text-xl font-medium hover:text-yellow-400 transition" data-en="Contact" data-ar="التواصل">Contact</a>
+    <a href="#enroll" onclick="closeMobileMenu()" class="btn-gold px-8 py-3 rounded-full text-lg mt-4" data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</a>
+  </nav>
+  <div class="flex gap-2 mt-4">
+    <button class="lang-btn" onclick="setLang('en');closeMobileMenu()">EN</button>
+    <button class="lang-btn" onclick="setLang('ar');closeMobileMenu()">AR</button>
+  </div>
+</div>
+
+<!-- NAVBAR -->
+<header id="navbar" class="top">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 flex items-center justify-between">
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <div class="w-10 h-10 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#1a6b3c,#d4a843)">
+        <span style="font-size:1.2rem">☪</span>
+      </div>
+      <div>
+        <div class="text-white font-bold text-sm leading-tight" style="letter-spacing:0.02em">The Quranic Gateway</div>
+        <div class="font-ar text-xs leading-tight" style="color:var(--gold-300)">بوابة القرآن</div>
+      </div>
+    </div>
+
+    <!-- Desktop Nav -->
+    <nav class="hidden md:flex items-center gap-7">
+      <a href="#about" class="text-white/80 hover:text-white text-sm font-medium transition" data-en="About" data-ar="عن الأكاديمية">About</a>
+      <a href="#services" class="text-white/80 hover:text-white text-sm font-medium transition" data-en="Programs" data-ar="البرامج">Programs</a>
+      <a href="#why-us" class="text-white/80 hover:text-white text-sm font-medium transition" data-en="Why Us" data-ar="لماذا نحن">Why Us</a>
+      <a href="#enroll" class="text-white/80 hover:text-white text-sm font-medium transition" data-en="Enroll" data-ar="التسجيل">Enroll</a>
+      <a href="#contact" class="text-white/80 hover:text-white text-sm font-medium transition" data-en="Contact" data-ar="التواصل">Contact</a>
+    </nav>
+
+    <!-- Right side -->
+    <div class="flex items-center gap-3">
+      <div class="hidden md:flex gap-1 p-1 rounded-full" style="background:rgba(255,255,255,0.07)">
+        <button id="lang-en" class="lang-btn active" onclick="setLang('en')">EN</button>
+        <button id="lang-ar" class="lang-btn" onclick="setLang('ar')">AR</button>
+      </div>
+      <a href="#enroll" class="hidden md:block btn-gold px-5 py-2.5 rounded-full text-sm" data-en="Enroll Now" data-ar="سجّل الآن">Enroll Now</a>
+      <button class="md:hidden text-white text-2xl" onclick="openMobileMenu()">☰</button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO SECTION -->
+<section id="hero" class="hero-bg flex items-center pt-24 pb-16 min-h-screen relative">
+  <div class="hero-glow"></div>
+  <div class="hero-glow-2"></div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 w-full">
+    <div class="grid lg:grid-cols-2 gap-12 items-center">
+      <!-- Left Content -->
+      <div class="text-center lg:text-left">
+        <!-- Tag -->
+        <div class="inline-flex items-center gap-2 mb-6 fade-up" style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3); border-radius:999px; padding:0.4rem 1rem;">
+          <span style="color:var(--gold-400); font-size:0.75rem">✦</span>
+          <span class="text-xs font-semibold uppercase tracking-widest" style="color:var(--gold-300)" data-en="Certified Islamic Academy Online" data-ar="أكاديمية إسلامية معتمدة عبر الإنترنت">Certified Islamic Academy Online</span>
+          <span style="color:var(--gold-400); font-size:0.75rem">✦</span>
+        </div>
+
+        <!-- Headline -->
+        <h1 class="fade-up-2 font-display text-white mb-5" style="font-size:clamp(2rem,4.5vw,3.2rem); line-height:1.15; font-weight:700">
+          <span id="hero-headline-en">Learn Arabic, Quran & Islamic Studies with Certified Scholars</span>
+          <span id="hero-headline-ar" class="font-ar hidden" style="font-size:clamp(1.7rem,4vw,2.8rem); line-height:1.5">تعلم العربية والقرآن والعلوم الإسلامية مع نخبة من المتخصصين</span>
+        </h1>
+
+        <!-- Gold line -->
+        <div class="fade-up-3 mb-5" style="width:60px; height:3px; background:linear-gradient(90deg,var(--gold-500),var(--gold-300)); border-radius:99px; margin: 0 auto 1.25rem; " id="hero-line"></div>
+
+        <!-- Subhead -->
+        <p class="fade-up-3 mb-8 leading-relaxed" style="color:rgba(255,255,255,0.7); font-size:1.05rem; max-width:520px; margin-left:auto; margin-right:auto">
+          <span data-en="Teaching Arabic language, the Holy Quran and its sciences through flexible online learning for students worldwide." data-ar="تعليم اللغة العربية والقرآن الكريم وعلومه من خلال التعلم عبر الإنترنت لطلاب من جميع أنحاء العالم.">Teaching Arabic language, the Holy Quran and its sciences through flexible online learning for students worldwide.</span>
+        </p>
+
+        <!-- CTAs -->
+        <div class="fade-up-4 flex flex-wrap gap-3 justify-center lg:justify-start mb-10">
+          <a href="#enroll" class="btn-gold px-8 py-3.5 rounded-full font-semibold text-base" data-en="Enroll Now →" data-ar="سجّل الآن ←">Enroll Now →</a>
+          <a href="https://wa.me/201008394649" target="_blank" class="btn-outline px-8 py-3.5 rounded-full font-semibold text-base" data-en="Contact Us" data-ar="تواصل معنا">Contact Us</a>
+        </div>
+
+        <!-- Trust badges -->
+        <div class="fade-up-4 flex flex-wrap gap-4 justify-center lg:justify-start">
+          <div class="flex items-center gap-2" style="color:rgba(255,255,255,0.6); font-size:0.82rem">
+            <span style="color:var(--gold-400)">✓</span>
+            <span data-en="Certified Scholars" data-ar="علماء معتمدون">Certified Scholars</span>
+          </div>
+          <div class="flex items-center gap-2" style="color:rgba(255,255,255,0.6); font-size:0.82rem">
+            <span style="color:var(--gold-400)">✓</span>
+            <span data-en="Flexible Schedules" data-ar="جداول مرنة">Flexible Schedules</span>
+          </div>
+          <div class="flex items-center gap-2" style="color:rgba(255,255,255,0.6); font-size:0.82rem">
+            <span style="color:var(--gold-400)">✓</span>
+            <span data-en="100% Online" data-ar="100% عبر الإنترنت">100% Online</span>
+          </div>
+          <div class="flex items-center gap-2" style="color:rgba(255,255,255,0.6); font-size:0.82rem">
+            <span style="color:var(--gold-400)">✓</span>
+            <span data-en="Global Students" data-ar="طلاب من العالم">Global Students</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Visual -->
+      <div class="flex justify-center items-center relative">
+        <!-- Geometric rings -->
+        <div style="position:absolute; width:360px; height:360px; border:1px solid rgba(212,168,67,0.15); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%)"></div>
+        <div style="position:absolute; width:300px; height:300px; border:1px solid rgba(212,168,67,0.1); border-radius:50%; top:50%; left:50%; transform:translate(-50%,-50%)"></div>
+
+        <!-- Central visual card -->
+        <div class="glass rounded-2xl p-8 text-center relative z-10" style="width:260px">
+          <div style="font-size:3.5rem; margin-bottom:1rem; line-height:1">🕌</div>
+          <div class="font-ar text-white font-bold mb-1" style="font-size:2rem; color:var(--gold-300)">بِسْمِ اللهِ</div>
+          <div class="text-white/60 text-xs mb-4" style="letter-spacing:0.1em">BISMILLAH</div>
+          <div style="height:1px; background:rgba(212,168,67,0.3); margin-bottom:1rem"></div>
+          <!-- Stats -->
+          <div class="flex justify-around">
+            <div>
+              <div class="font-bold text-white text-xl" style="font-family:'Playfair Display',serif">500+</div>
+              <div class="text-white/50 text-xs" data-en="Students" data-ar="طالب">Students</div>
+            </div>
+            <div style="width:1px; background:rgba(212,168,67,0.2)"></div>
+            <div>
+              <div class="font-bold text-white text-xl" style="font-family:'Playfair Display',serif">6</div>
+              <div class="text-white/50 text-xs" data-en="Programs" data-ar="برامج">Programs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating tags -->
+        <div class="glass absolute -top-4 -right-4 px-3 py-2 rounded-xl text-xs font-medium" style="color:var(--gold-300)">
+          🎓 <span data-en="Expert Teachers" data-ar="معلمون خبراء">Expert Teachers</span>
+        </div>
+        <div class="glass absolute -bottom-4 -left-4 px-3 py-2 rounded-xl text-xs font-medium" style="color:var(--gold-300)">
+          🌍 <span data-en="50+ Countries" data-ar="50+ دولة">50+ Countries</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bottom wave -->
+  <div style="position:absolute; bottom:-1px; left:0; right:0">
+    <svg viewBox="0 0 1440 60" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none" style="width:100%; height:60px; display:block">
+      <path d="M0,0 C360,60 1080,60 1440,0 L1440,60 L0,60 Z" fill="#faf8f3"/>
+    </svg>
+  </div>
+</section>
+
+<!-- ABOUT SECTION -->
+<section id="about" class="py-20 px-4 sm:px-6" style="background:var(--cream)">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <div class="ornament mb-4"><span>✦</span></div>
+      <span class="section-tag" data-en="✦ About The Academy" data-ar="✦ عن الأكاديمية">✦ About The Academy</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--green-950)">
+        <span data-en="Rooted in Knowledge," data-ar="راسخون في العلم،">Rooted in Knowledge,</span><br>
+        <span style="color:var(--green-700)" data-en="Committed to Your Growth" data-ar="ملتزمون بنموك">Committed to Your Growth</span>
+      </h2>
+      <p class="max-w-2xl mx-auto leading-relaxed" style="color:#4a6352; font-size:1.05rem">
+        <span data-en="The Quranic Gateway is an online Islamic academy founded by certified scholars dedicated to teaching the Holy Quran, Arabic language, Tajweed, and Islamic sciences to students around the world — including non-native speakers." data-ar="بوابة القرآن أكاديمية إسلامية عبر الإنترنت أسسها علماء معتمدون مكرسون لتعليم القرآن الكريم واللغة العربية والتجويد والعلوم الإسلامية لطلاب حول العالم.">The Quranic Gateway is an online Islamic academy founded by certified scholars dedicated to teaching the Holy Quran, Arabic language, Tajweed, and Islamic sciences to students around the world — including non-native speakers.</span>
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-5">
+      <div class="glass-light rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-3">📖</div>
+        <h3 class="font-semibold mb-2" style="color:var(--green-900)" data-en="Quran Learning" data-ar="تعلم القرآن">Quran Learning</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Memorization, recitation, and understanding of the Holy Quran." data-ar="حفظ القرآن وتلاوته وفهم معانيه.">Memorization, recitation, and understanding of the Holy Quran.</p>
+      </div>
+      <div class="glass-light rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-3">🔤</div>
+        <h3 class="font-semibold mb-2" style="color:var(--green-900)" data-en="Arabic Language" data-ar="اللغة العربية">Arabic Language</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Comprehensive Arabic from beginner to advanced level." data-ar="العربية الشاملة من المبتدئ إلى المتقدم.">Comprehensive Arabic from beginner to advanced level.</p>
+      </div>
+      <div class="glass-light rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-3">🎵</div>
+        <h3 class="font-semibold mb-2" style="color:var(--green-900)" data-en="Tajweed Sciences" data-ar="علم التجويد">Tajweed Sciences</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Master proper Quranic recitation rules with expert guidance." data-ar="إتقان أحكام التلاوة القرآنية بإرشاد متخصص.">Master proper Quranic recitation rules with expert guidance.</p>
+      </div>
+      <div class="glass-light rounded-2xl p-6 text-center">
+        <div class="text-4xl mb-3">🕌</div>
+        <h3 class="font-semibold mb-2" style="color:var(--green-900)" data-en="Islamic Studies" data-ar="العلوم الإسلامية">Islamic Studies</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Authentic Islamic knowledge covering Fiqh, Seerah, and more." data-ar="العلم الإسلامي الأصيل يشمل الفقه والسيرة وأكثر.">Authentic Islamic knowledge covering Fiqh, Seerah, and more.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES SECTION -->
+<section id="services" class="py-20 px-4 sm:px-6 geo-pattern" style="background:#f0ede6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-tag" data-en="✦ Our Programs" data-ar="✦ برامجنا">✦ Our Programs</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--green-950)">
+        <span data-en="What We Teach" data-ar="ما نعلّمه">What We Teach</span>
+      </h2>
+      <p class="max-w-xl mx-auto" style="color:#4a6352; font-size:1rem">
+        <span data-en="Structured programs designed to guide every student from beginner to mastery." data-ar="برامج منظمة لتوجيه كل طالب من المبتدئ إلى الإتقان.">Structured programs designed to guide every student from beginner to mastery.</span>
+      </p>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">📿</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Quran Memorization" data-ar="حفظ القرآن الكريم">Quran Memorization</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Structured Hifz program with personal tracking and certified supervision for all levels." data-ar="برنامج حفظ منظم مع متابعة شخصية وإشراف معتمد لجميع المستويات.">Structured Hifz program with personal tracking and certified supervision for all levels.</p>
+      </div>
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">🎵</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Tajweed" data-ar="علم التجويد">Tajweed</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Learn the rules of Tajweed from Hafs and other narrations with practical application." data-ar="تعلم أحكام التجويد من رواية حفص وغيرها مع التطبيق العملي.">Learn the rules of Tajweed from Hafs and other narrations with practical application.</p>
+      </div>
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">📝</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Arabic Language" data-ar="اللغة العربية">Arabic Language</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Reading, writing, grammar (Nahw & Sarf) and conversational Arabic from scratch." data-ar="قراءة وكتابة ونحو وصرف وعربية محادثة من الصفر.">Reading, writing, grammar (Nahw & Sarf) and conversational Arabic from scratch.</p>
+      </div>
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">🕌</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Islamic Studies" data-ar="الدراسات الإسلامية">Islamic Studies</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Aqeedah, Fiqh, Seerah, Hadith sciences — authentic knowledge from qualified scholars." data-ar="عقيدة وفقه وسيرة وعلوم الحديث — علم أصيل من علماء متأهلين.">Aqeedah, Fiqh, Seerah, Hadith sciences — authentic knowledge from qualified scholars.</p>
+      </div>
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">📚</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Quran Sciences" data-ar="علوم القرآن">Quran Sciences</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Tafseer, Uloom al-Quran, Asbab al-Nuzool — deep Quranic understanding." data-ar="تفسير وعلوم القرآن وأسباب النزول — فهم قرآني عميق.">Tafseer, Uloom al-Quran, Asbab al-Nuzool — deep Quranic understanding.</p>
+      </div>
+      <div class="service-card rounded-2xl p-6">
+        <div class="service-icon"><span style="font-size:1.5rem">🌍</span></div>
+        <h3 class="font-semibold text-lg mb-2" style="color:var(--green-900)" data-en="Non-Native Speakers" data-ar="غير الناطقين بالعربية">Non-Native Speakers</h3>
+        <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Specialized curriculum designed for students learning Arabic or Quran as a second language." data-ar="منهج متخصص للطلاب الذين يتعلمون العربية أو القرآن كلغة ثانية.">Specialized curriculum designed for students learning Arabic or Quran as a second language.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHY CHOOSE US -->
+<section id="why-us" class="py-20 px-4 sm:px-6" style="background:var(--cream)">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-tag" data-en="✦ Why Choose Us" data-ar="✦ لماذا تختارنا">✦ Why Choose Us</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--green-950)">
+        <span data-en="An Experience Built for You" data-ar="تجربة مبنية من أجلك">An Experience Built for You</span>
+      </h2>
+    </div>
+
+    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">🎓</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="Certified Scholars" data-ar="علماء معتمدون">Certified Scholars</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="All teachers hold formal ijaza and academic qualifications in Islamic sciences." data-ar="جميع المعلمين حاملون إجازة رسمية ومؤهلات أكاديمية في العلوم الإسلامية.">All teachers hold formal ijaza and academic qualifications in Islamic sciences.</p>
+        </div>
+      </div>
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">🕐</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="Flexible Schedules" data-ar="جداول مرنة">Flexible Schedules</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Morning, afternoon, or evening sessions — you choose what fits your life." data-ar="جلسات صباحية أو مسائية — أنت تختار ما يناسب حياتك.">Morning, afternoon, or evening sessions — you choose what fits your life.</p>
+        </div>
+      </div>
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">💻</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="100% Online" data-ar="100% عبر الإنترنت">100% Online</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Learn from anywhere in the world, on any device, at your own convenience." data-ar="تعلم من أي مكان في العالم، على أي جهاز، بحسب راحتك.">Learn from anywhere in the world, on any device, at your own convenience.</p>
+        </div>
+      </div>
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">🎯</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="Personalized Learning" data-ar="تعلم شخصي">Personalized Learning</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="Custom lesson plans tailored to your level, goals, and pace." data-ar="خطط دروس مخصصة وفقاً لمستواك وأهدافك وإيقاعك.">Custom lesson plans tailored to your level, goals, and pace.</p>
+        </div>
+      </div>
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">🌍</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="International Students" data-ar="طلاب دوليون">International Students</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="We serve students from 50+ countries across all time zones." data-ar="نخدم طلاباً من أكثر من 50 دولة عبر جميع المناطق الزمنية.">We serve students from 50+ countries across all time zones.</p>
+        </div>
+      </div>
+      <div class="feature-card rounded-2xl p-6 flex gap-4 items-start">
+        <div class="w-12 h-12 rounded-xl flex-shrink-0 flex items-center justify-center text-2xl" style="background:rgba(26,107,60,0.08)">🌱</div>
+        <div>
+          <h3 class="font-semibold mb-1" style="color:var(--green-900)" data-en="Beginner-Friendly" data-ar="مناسب للمبتدئين">Beginner-Friendly</h3>
+          <p class="text-sm leading-relaxed" style="color:#5a7a65" data-en="No prior knowledge needed. We start from the very basics with patience and care." data-ar="لا حاجة لمعرفة مسبقة. نبدأ من الأساسيات بصبر واهتمام.">No prior knowledge needed. We start from the very basics with patience and care.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ENROLLMENT FORM SECTION -->
+<section id="enroll" class="py-20 px-4 sm:px-6" style="background:linear-gradient(135deg, #0a1f14 0%, #0d2b1a 50%, #0a1f14 100%); position:relative; overflow:hidden">
+  <!-- BG pattern -->
+  <div style="position:absolute;inset:0;opacity:0.4" class="star-pattern"></div>
+  <div style="position:absolute; top:-100px; right:-100px; width:400px; height:400px; background:radial-gradient(circle,rgba(212,168,67,0.08),transparent 70%); pointer-events:none"></div>
+
+  <div class="max-w-2xl mx-auto relative z-10">
+    <div class="text-center mb-10">
+      <span style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3); border-radius:999px; padding:0.4rem 1rem; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-300)" data-en="✦ Start Your Journey" data-ar="✦ ابدأ رحلتك">✦ Start Your Journey</span>
+      <h2 class="font-display text-white text-3xl md:text-4xl font-bold mt-4 mb-3">
+        <span data-en="Enroll Today" data-ar="سجّل اليوم">Enroll Today</span>
+      </h2>
+      <p style="color:rgba(255,255,255,0.6)" data-en="Fill out the form and we'll contact you via WhatsApp to confirm your enrollment." data-ar="املأ النموذج وسنتواصل معك عبر واتساب لتأكيد تسجيلك.">Fill out the form and we'll contact you via WhatsApp to confirm your enrollment.</p>
+    </div>
+
+    <!-- Progress -->
+    <div class="mb-8">
+      <div style="background:rgba(255,255,255,0.1); height:3px; border-radius:99px; overflow:hidden;">
+        <div id="progress-bar" class="progress-bar" style="width:33.3%"></div>
+      </div>
+      <div class="flex justify-between mt-2 text-xs" style="color:rgba(255,255,255,0.4)">
+        <span data-en="Personal Info" data-ar="بياناتك">Personal Info</span>
+        <span data-en="Program" data-ar="البرنامج">Program</span>
+        <span data-en="Payment" data-ar="الدفع">Payment</span>
+      </div>
+    </div>
+
+    <!-- Step indicators -->
+    <div class="step-indicator">
+      <div class="step-dot active" id="dot-1"></div>
+      <div class="step-dot" id="dot-2"></div>
+      <div class="step-dot" id="dot-3"></div>
+    </div>
+
+    <!-- Form card -->
+    <div class="rounded-2xl p-8" style="background:rgba(255,255,255,0.96); box-shadow:0 25px 60px rgba(0,0,0,0.3)">
+
+      <!-- STEP 1 -->
+      <div class="form-step active" id="step-1">
+        <h3 class="font-semibold text-lg mb-6" style="color:var(--green-900)" data-en="Personal Information" data-ar="المعلومات الشخصية">Personal Information</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="form-label" data-en="Full Name *" data-ar="الاسم الكامل *">Full Name *</label>
+            <input type="text" id="f-name" class="form-input" placeholder="Your full name" data-placeholder-en="Your full name" data-placeholder-ar="اسمك الكامل">
+          </div>
+          <div>
+            <label class="form-label" data-en="WhatsApp Number *" data-ar="رقم واتساب *">WhatsApp Number *</label>
+            <input type="tel" id="f-phone" class="form-input" placeholder="+1 234 567 8900" data-placeholder-en="+1 234 567 8900" data-placeholder-ar="+966 5XX XXX XXXX">
+          </div>
+          <div>
+            <label class="form-label" data-en="Country *" data-ar="الدولة *">Country *</label>
+            <select id="f-country" class="form-input">
+              <option value="" data-en="Select your country" data-ar="اختر دولتك">Select your country</option>
+              <option>Egypt</option><option>Saudi Arabia</option><option>UAE</option><option>Kuwait</option><option>Qatar</option><option>Jordan</option><option>USA</option><option>UK</option><option>Canada</option><option>Australia</option><option>France</option><option>Germany</option><option>Malaysia</option><option>Indonesia</option><option>Turkey</option><option>Other</option>
+            </select>
+          </div>
+        </div>
+        <button onclick="nextStep(2)" class="btn-gold w-full py-3.5 rounded-xl mt-6 font-semibold" data-en="Continue →" data-ar="متابعة ←">Continue →</button>
+      </div>
+
+      <!-- STEP 2 -->
+      <div class="form-step" id="step-2">
+        <h3 class="font-semibold text-lg mb-6" style="color:var(--green-900)" data-en="Program & Schedule" data-ar="البرنامج والجدول">Program & Schedule</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="form-label" data-en="Program Interested In *" data-ar="البرنامج المهتم به *">Program Interested In *</label>
+            <select id="f-program" class="form-input">
+              <option value="" data-en="Select a program" data-ar="اختر برنامجاً">Select a program</option>
+              <option data-en="Quran Memorization" data-ar="حفظ القرآن الكريم">Quran Memorization</option>
+              <option data-en="Tajweed" data-ar="علم التجويد">Tajweed</option>
+              <option data-en="Arabic Language" data-ar="اللغة العربية">Arabic Language</option>
+              <option data-en="Islamic Studies" data-ar="الدراسات الإسلامية">Islamic Studies</option>
+              <option data-en="Quran Sciences" data-ar="علوم القرآن">Quran Sciences</option>
+              <option data-en="Non-Native Speaker Program" data-ar="برنامج غير الناطقين بالعربية">Non-Native Speaker Program</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" data-en="Preferred Schedule" data-ar="الجدول المفضل">Preferred Schedule</label>
+            <select id="f-schedule" class="form-input">
+              <option data-en="Morning (8AM - 12PM)" data-ar="صباحاً (8 - 12)">Morning (8AM - 12PM)</option>
+              <option data-en="Afternoon (12PM - 5PM)" data-ar="ظهراً (12 - 5)">Afternoon (12PM - 5PM)</option>
+              <option data-en="Evening (5PM - 10PM)" data-ar="مساءً (5 - 10)">Evening (5PM - 10PM)</option>
+            </select>
+          </div>
+          <div>
+            <label class="form-label" data-en="Preferred Days" data-ar="الأيام المفضلة">Preferred Days</label>
+            <select id="f-days" class="form-input">
+              <option data-en="Weekdays (Sun-Thu)" data-ar="أيام الأسبوع (الأحد - الخميس)">Weekdays (Sun-Thu)</option>
+              <option data-en="Weekends (Fri-Sat)" data-ar="عطلة نهاية الأسبوع (الجمعة - السبت)">Weekends (Fri-Sat)</option>
+              <option data-en="Flexible" data-ar="مرن">Flexible</option>
+            </select>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-6">
+          <button onclick="prevStep(1)" class="flex-1 py-3.5 rounded-xl font-semibold border" style="border-color:var(--green-700);color:var(--green-700)" data-en="← Back" data-ar="→ رجوع">← Back</button>
+          <button onclick="nextStep(3)" class="btn-gold flex-1 py-3.5 rounded-xl font-semibold" data-en="Continue →" data-ar="متابعة ←">Continue →</button>
+        </div>
+      </div>
+
+      <!-- STEP 3 -->
+      <div class="form-step" id="step-3">
+        <h3 class="font-semibold text-lg mb-6" style="color:var(--green-900)" data-en="Payment & Notes" data-ar="الدفع والملاحظات">Payment & Notes</h3>
+        <div class="space-y-4">
+          <div>
+            <label class="form-label" data-en="Preferred Payment Method" data-ar="طريقة الدفع المفضلة">Preferred Payment Method</label>
+            <div class="grid grid-cols-2 gap-2" id="payment-options">
+              <label class="payment-opt">
+                <input type="radio" name="payment" value="Vodafone Cash" checked class="hidden">
+                <div class="border-2 rounded-xl p-3 text-center cursor-pointer text-sm font-medium payment-opt-box" style="border-color:rgba(10,31,20,0.15); color:#2d5040; transition:all 0.2s">📱 Vodafone Cash</div>
+              </label>
+              <label class="payment-opt">
+                <input type="radio" name="payment" value="Orange Cash" class="hidden">
+                <div class="border-2 rounded-xl p-3 text-center cursor-pointer text-sm font-medium payment-opt-box" style="border-color:rgba(10,31,20,0.15); color:#2d5040; transition:all 0.2s">📱 Orange Cash</div>
+              </label>
+              <label class="payment-opt">
+                <input type="radio" name="payment" value="Etisalat Cash" class="hidden">
+                <div class="border-2 rounded-xl p-3 text-center cursor-pointer text-sm font-medium payment-opt-box" style="border-color:rgba(10,31,20,0.15); color:#2d5040; transition:all 0.2s">📱 Etisalat Cash</div>
+              </label>
+              <label class="payment-opt">
+                <input type="radio" name="payment" value="InstaPay" class="hidden">
+                <div class="border-2 rounded-xl p-3 text-center cursor-pointer text-sm font-medium payment-opt-box" style="border-color:rgba(10,31,20,0.15); color:#2d5040; transition:all 0.2s">💳 InstaPay</div>
+              </label>
+              <label class="payment-opt col-span-2">
+                <input type="radio" name="payment" value="Cash" class="hidden">
+                <div class="border-2 rounded-xl p-3 text-center cursor-pointer text-sm font-medium payment-opt-box" style="border-color:rgba(10,31,20,0.15); color:#2d5040; transition:all 0.2s">💵 Cash</div>
+              </label>
+            </div>
+          </div>
+          <div>
+            <label class="form-label" data-en="Additional Notes" data-ar="ملاحظات إضافية">Additional Notes</label>
+            <textarea id="f-notes" class="form-input" rows="3" placeholder="Any additional information..." data-placeholder-en="Any additional information..." data-placeholder-ar="أي معلومات إضافية..."></textarea>
+          </div>
+        </div>
+        <div class="flex gap-3 mt-6">
+          <button onclick="prevStep(2)" class="flex-1 py-3.5 rounded-xl font-semibold border" style="border-color:var(--green-700);color:var(--green-700)" data-en="← Back" data-ar="→ رجوع">← Back</button>
+          <button onclick="submitForm()" class="btn-gold flex-1 py-3.5 rounded-xl font-semibold" data-en="Send via WhatsApp 💬" data-ar="إرسال عبر واتساب 💬">Send via WhatsApp 💬</button>
+        </div>
+      </div>
+
+    </div>
+
+    <p class="text-center mt-4 text-xs" style="color:rgba(255,255,255,0.4)" data-en="Your information is private and will only be used to process your enrollment." data-ar="معلوماتك خاصة ولن تُستخدم إلا لمعالجة تسجيلك.">Your information is private and will only be used to process your enrollment.</p>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials" class="py-20 px-4 sm:px-6" style="background:#f0ede6">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-tag" data-en="✦ Student Reviews" data-ar="✦ آراء الطلاب">✦ Student Reviews</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--green-950)">
+        <span data-en="What Our Students Say" data-ar="ماذا يقول طلابنا">What Our Students Say</span>
+      </h2>
+    </div>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div class="testimonial-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-sm" style="background:var(--green-700)">SA</div>
+          <div>
+            <div class="font-semibold text-sm" style="color:var(--green-900)">Sarah A.</div>
+            <div class="text-xs" style="color:#7a9985">🇺🇸 United States</div>
+          </div>
+          <div class="ml-auto text-yellow-400 text-sm">★★★★★</div>
+        </div>
+        <p class="text-sm leading-relaxed" style="color:#4a6352" data-en="I started with zero Arabic knowledge and after 6 months I can read the Quran. My teacher is incredibly patient and knowledgeable. Highly recommend!" data-ar="بدأت دون أي معرفة بالعربية وبعد 6 أشهر أستطيع قراءة القرآن. معلمتي صبورة جداً ومتعلمة. أوصي بها بشدة!">I started with zero Arabic knowledge and after 6 months I can read the Quran. My teacher is incredibly patient and knowledgeable. Highly recommend!</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-sm" style="background:var(--green-700)">MK</div>
+          <div>
+            <div class="font-semibold text-sm" style="color:var(--green-900)">Mohammed K.</div>
+            <div class="text-xs" style="color:#7a9985">🇬🇧 United Kingdom</div>
+          </div>
+          <div class="ml-auto text-yellow-400 text-sm">★★★★★</div>
+        </div>
+        <p class="text-sm leading-relaxed" style="color:#4a6352" data-en="The Tajweed program is exceptional. My recitation has improved dramatically. The flexible scheduling fits perfectly around my work hours." data-ar="برنامج التجويد استثنائي. تحسنت تلاوتي بشكل كبير. الجدول المرن يتناسب تماماً مع ساعات عملي.">The Tajweed program is exceptional. My recitation has improved dramatically. The flexible scheduling fits perfectly around my work hours.</p>
+      </div>
+      <div class="testimonial-card">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-11 h-11 rounded-full flex items-center justify-center font-bold text-white text-sm" style="background:var(--green-700)">FO</div>
+          <div>
+            <div class="font-semibold text-sm" style="color:var(--green-900)">Fatimah O.</div>
+            <div class="text-xs" style="color:#7a9985">🇨🇦 Canada</div>
+          </div>
+          <div class="ml-auto text-yellow-400 text-sm">★★★★★</div>
+        </div>
+        <p class="text-sm leading-relaxed" style="color:#4a6352" data-en="My children are now memorizing Quran online with certified teachers. The program is organized, professional, and truly blessed. Alhamdulillah." data-ar="أطفالي الآن يحفظون القرآن عبر الإنترنت مع معلمين معتمدين. البرنامج منظم ومهني ومبارك حقاً.">My children are now memorizing Quran online with certified teachers. The program is organized, professional, and truly blessed. Alhamdulillah.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section id="faq" class="py-20 px-4 sm:px-6" style="background:var(--cream)">
+  <div class="max-w-3xl mx-auto">
+    <div class="text-center mb-14">
+      <span class="section-tag" data-en="✦ FAQ" data-ar="✦ الأسئلة الشائعة">✦ FAQ</span>
+      <h2 class="font-display text-3xl md:text-4xl font-bold mb-4" style="color:var(--green-950)">
+        <span data-en="Common Questions" data-ar="الأسئلة الشائعة">Common Questions</span>
+      </h2>
+    </div>
+    <div id="faq-list">
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span data-en="Are the classes fully online?" data-ar="هل الدروس عبر الإنترنت بالكامل؟">Are the classes fully online?</span>
+          <span class="faq-icon text-xl" style="color:var(--green-700); transition:transform 0.3s">+</span>
+        </button>
+        <div class="faq-content">
+          <span data-en="Yes, all our classes are 100% online via video call. You can attend from anywhere in the world with a stable internet connection." data-ar="نعم، جميع دروسنا 100% عبر الإنترنت عبر مكالمة فيديو. يمكنك الحضور من أي مكان في العالم باتصال إنترنت مستقر.">Yes, all our classes are 100% online via video call. You can attend from anywhere in the world with a stable internet connection.</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span data-en="Do you teach complete beginners?" data-ar="هل تدرّسون المبتدئين تماماً؟">Do you teach complete beginners?</span>
+          <span class="faq-icon text-xl" style="color:var(--green-700); transition:transform 0.3s">+</span>
+        </button>
+        <div class="faq-content">
+          <span data-en="Absolutely. Our programs are designed to welcome students at every level — from those with no prior knowledge to advanced learners." data-ar="بالتأكيد. برامجنا مصممة لاستقبال الطلاب على كل مستوى — من لا معرفة مسبقة لهم إلى المتعلمين المتقدمين.">Absolutely. Our programs are designed to welcome students at every level — from those with no prior knowledge to advanced learners.</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span data-en="Are schedules truly flexible?" data-ar="هل الجداول مرنة فعلاً؟">Are schedules truly flexible?</span>
+          <span class="faq-icon text-xl" style="color:var(--green-700); transition:transform 0.3s">+</span>
+        </button>
+        <div class="faq-content">
+          <span data-en="Yes. We offer morning, afternoon, and evening time slots across weekdays and weekends. We work around your schedule, not the other way." data-ar="نعم. نقدم فترات صباحية وظهرية ومسائية في أيام الأسبوع وعطل نهاية الأسبوع. نتكيف مع جدولك.">Yes. We offer morning, afternoon, and evening time slots across weekdays and weekends. We work around your schedule, not the other way.</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span data-en="Do you offer certificates?" data-ar="هل تقدمون شهادات؟">Do you offer certificates?</span>
+          <span class="faq-icon text-xl" style="color:var(--green-700); transition:transform 0.3s">+</span>
+        </button>
+        <div class="faq-content">
+          <span data-en="Yes. Students who complete their programs receive an official certificate of completion. Ijaza certificates are also available for qualified Quran students." data-ar="نعم. يحصل الطلاب الذين يكملون برامجهم على شهادة إتمام رسمية. تتوفر أيضاً إجازات لطلاب القرآن المؤهلين.">Yes. Students who complete their programs receive an official certificate of completion. Ijaza certificates are also available for qualified Quran students.</span>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-trigger" onclick="toggleFaq(this)">
+          <span data-en="Which countries do you teach in?" data-ar="في أي دول تعلّمون؟">Which countries do you teach in?</span>
+          <span class="faq-icon text-xl" style="color:var(--green-700); transition:transform 0.3s">+</span>
+        </button>
+        <div class="faq-content">
+          <span data-en="We currently serve students in over 50 countries across the Middle East, Europe, North America, Southeast Asia, and Africa." data-ar="نخدم حالياً طلاباً في أكثر من 50 دولة في الشرق الأوسط وأوروبا وأمريكا الشمالية وجنوب شرق آسيا وأفريقيا.">We currently serve students in over 50 countries across the Middle East, Europe, North America, Southeast Asia, and Africa.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT SECTION -->
+<section id="contact" class="py-20 px-4 sm:px-6" style="background:linear-gradient(135deg,#0d2b1a,#0a1f14); position:relative; overflow:hidden">
+  <div style="position:absolute;inset:0" class="geo-pattern opacity-30"></div>
+  <div class="max-w-4xl mx-auto text-center relative z-10">
+    <span style="background:rgba(212,168,67,0.12); border:1px solid rgba(212,168,67,0.3); border-radius:999px; padding:0.4rem 1rem; font-size:0.8rem; font-weight:600; text-transform:uppercase; letter-spacing:0.08em; color:var(--gold-300)" data-en="✦ Get In Touch" data-ar="✦ تواصل معنا">✦ Get In Touch</span>
+    <h2 class="font-display text-white text-3xl md:text-4xl font-bold mt-4 mb-4">
+      <span data-en="We'd Love to Hear From You" data-ar="نود أن نسمع منك">We'd Love to Hear From You</span>
+    </h2>
+    <p class="mb-10" style="color:rgba(255,255,255,0.6)" data-en="Reach us through WhatsApp or Messenger — we typically respond within minutes." data-ar="تواصل معنا عبر واتساب أو ماسنجر — نرد عادة في غضون دقائق.">Reach us through WhatsApp or Messenger — we typically respond within minutes.</p>
+
+    <div class="flex flex-wrap gap-4 justify-center mb-10">
+      <a href="https://wa.me/201008394649" target="_blank" class="flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white transition hover:opacity-90 hover:-translate-y-1" style="background:#25D366; box-shadow:0 8px 25px rgba(37,211,102,0.35)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        <span data-en="WhatsApp Us" data-ar="واتساب">WhatsApp Us</span>
+      </a>
+      <a href="https://m.me/YourFBPage" target="_blank" class="flex items-center gap-3 px-8 py-4 rounded-2xl font-semibold text-white transition hover:opacity-90 hover:-translate-y-1" style="background:linear-gradient(135deg,#0078ff,#00c6ff); box-shadow:0 8px 25px rgba(0,120,255,0.35)">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="white"><path d="M12 0C5.373 0 0 4.974 0 11.111c0 3.498 1.744 6.614 4.469 8.652V24l4.088-2.242c1.092.3 2.246.464 3.443.464 6.627 0 12-4.975 12-11.111C24 4.974 18.627 0 12 0zm1.191 14.963l-3.055-3.26-5.963 3.26L10.732 8l3.131 3.259L19.752 8l-6.561 6.963z"/></svg>
+        <span data-en="Messenger" data-ar="ماسنجر">Messenger</span>
+      </a>
+    </div>
+
+    <!-- Social icons -->
+    <div class="flex justify-center gap-5">
+      <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center transition hover:-translate-y-1" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.7)">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+      </a>
+      <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center transition hover:-translate-y-1" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.7)">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="#" class="w-11 h-11 rounded-full flex items-center justify-center transition hover:-translate-y-1" style="background:rgba(255,255,255,0.08); color:rgba(255,255,255,0.7)">
+        <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.78 1.52V6.76a4.85 4.85 0 01-1.01-.07z"/></svg>
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer style="background:#060f09; color:rgba(255,255,255,0.5)" class="py-12 px-4 sm:px-6">
+  <div class="max-w-6xl mx-auto">
+    <div class="grid md:grid-cols-4 gap-8 mb-10">
+      <!-- Brand -->
+      <div class="md:col-span-2">
+        <div class="flex items-center gap-3 mb-4">
+          <div class="w-9 h-9 rounded-full flex items-center justify-center" style="background:linear-gradient(135deg,#1a6b3c,#d4a843)">
+            <span style="font-size:1.1rem">☪</span>
+          </div>
+          <div>
+            <div class="text-white font-bold text-sm">The Quranic Gateway</div>
+            <div class="font-ar text-xs" style="color:var(--gold-400)">بوابة القرآن</div>
+          </div>
+        </div>
+        <p class="text-sm leading-relaxed mb-4" data-en="Premium online Islamic education for students worldwide. Certified scholars. Flexible schedules. Authentic knowledge." data-ar="تعليم إسلامي عبر الإنترنت لطلاب من جميع أنحاء العالم. علماء معتمدون. جداول مرنة. علم أصيل.">Premium online Islamic education for students worldwide. Certified scholars. Flexible schedules. Authentic knowledge.</p>
+      </div>
+      <!-- Quick links -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4" data-en="Quick Links" data-ar="روابط سريعة">Quick Links</h4>
+        <div class="flex flex-col gap-2 text-sm">
+          <a href="#about" class="hover:text-white transition" data-en="About" data-ar="عن الأكاديمية">About</a>
+          <a href="#services" class="hover:text-white transition" data-en="Programs" data-ar="البرامج">Programs</a>
+          <a href="#enroll" class="hover:text-white transition" data-en="Enroll" data-ar="التسجيل">Enroll</a>
+          <a href="#faq" class="hover:text-white transition" data-en="FAQ" data-ar="الأسئلة الشائعة">FAQ</a>
+          <a href="#contact" class="hover:text-white transition" data-en="Contact" data-ar="التواصل">Contact</a>
+        </div>
+      </div>
+      <!-- Contact -->
+      <div>
+        <h4 class="text-white font-semibold text-sm mb-4" data-en="Contact" data-ar="التواصل">Contact</h4>
+        <div class="flex flex-col gap-2 text-sm">
+          <a href="https://wa.me/201008394649" class="hover:text-white transition">WhatsApp: +20 100 839 4649</a>
+          <div class="flex gap-3 mt-2">
+            <div class="flex gap-1 p-1 rounded-full" style="background:rgba(255,255,255,0.05)">
+              <button class="lang-btn" onclick="setLang('en')" id="footer-lang-en">EN</button>
+              <button class="lang-btn" onclick="setLang('ar')" id="footer-lang-ar">AR</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border-top:1px solid rgba(255,255,255,0.07)" class="pt-6 flex flex-col md:flex-row justify-between items-center gap-3 text-xs">
+      <span data-en="© 2025 The Quranic Gateway. All rights reserved." data-ar="© 2025 بوابة القرآن. جميع الحقوق محفوظة.">© 2025 The Quranic Gateway. All rights reserved.</span>
+      <span style="color:var(--gold-500)">بِسْمِ اللهِ الرَّحْمٰنِ الرَّحِيمِ</span>
+    </div>
+  </div>
+</footer>
+
+<script>
+// ================== LANGUAGE ==================
+let currentLang = 'en';
+function setLang(lang) {
+  currentLang = lang;
+  const isAr = lang === 'ar';
+
+  document.documentElement.lang = lang;
+  document.documentElement.dir = isAr ? 'rtl' : 'ltr';
+  document.body.classList.toggle('rtl', isAr);
+
+  // Update lang buttons
+  ['lang-en','lang-ar','footer-lang-en','footer-lang-ar'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      el.classList.toggle('active', id.endsWith(lang));
+    }
+  });
+
+  // Update all data-en/data-ar text elements
+  document.querySelectorAll('[data-en]').forEach(el => {
+    const text = el.getAttribute(isAr ? 'data-ar' : 'data-en');
+    if (text) el.textContent = text;
+  });
+
+  // Hero headline toggle
+  document.getElementById('hero-headline-en').classList.toggle('hidden', isAr);
+  document.getElementById('hero-headline-ar').classList.toggle('hidden', !isAr);
+
+  // Hero line alignment
+  const line = document.getElementById('hero-line');
+  if (line) {
+    line.style.marginLeft = isAr ? 'auto' : (window.innerWidth < 1024 ? 'auto' : '0');
+    line.style.marginRight = isAr ? '0' : (window.innerWidth < 1024 ? 'auto' : 'auto');
+  }
+
+  // Placeholders
+  document.querySelectorAll('[data-placeholder-en]').forEach(el => {
+    el.placeholder = el.getAttribute(isAr ? 'data-placeholder-ar' : 'data-placeholder-en') || '';
+  });
+
+  // Select options
+  document.querySelectorAll('select option[data-en]').forEach(opt => {
+    opt.textContent = opt.getAttribute(isAr ? 'data-ar' : 'data-en') || '';
+  });
+}
+
+// ================== NAVBAR SCROLL ==================
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  if (window.scrollY > 50) {
+    nav.classList.remove('top');
+    nav.classList.add('scrolled');
+  } else {
+    nav.classList.remove('scrolled');
+    nav.classList.add('top');
+  }
+});
+
+// ================== MOBILE MENU ==================
+function openMobileMenu() { document.getElementById('mobile-menu').classList.add('open'); }
+function closeMobileMenu() { document.getElementById('mobile-menu').classList.remove('open'); }
+
+// ================== MULTI-STEP FORM ==================
+let currentStep = 1;
+
+function nextStep(n) {
+  // Basic validation
+  if (n === 2) {
+    const name = document.getElementById('f-name').value.trim();
+    const phone = document.getElementById('f-phone').value.trim();
+    const country = document.getElementById('f-country').value;
+    if (!name || !phone || !country) {
+      alert(currentLang === 'ar' ? 'يرجى ملء جميع الحقول المطلوبة.' : 'Please fill in all required fields.');
+      return;
+    }
+  }
+  if (n === 3) {
+    const program = document.getElementById('f-program').value;
+    if (!program) {
+      alert(currentLang === 'ar' ? 'يرجى اختيار برنامج.' : 'Please select a program.');
+      return;
+    }
+  }
+  goToStep(n);
+}
+
+function prevStep(n) { goToStep(n); }
+
+function goToStep(n) {
+  document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+  document.getElementById('step-' + n).classList.add('active');
+  document.querySelectorAll('.step-dot').forEach((d, i) => d.classList.toggle('active', i < n));
+  document.getElementById('progress-bar').style.width = ((n / 3) * 100) + '%';
+  currentStep = n;
+}
+
+// Payment option highlight
+document.addEventListener('change', e => {
+  if (e.target.name === 'payment') {
+    document.querySelectorAll('.payment-opt-box').forEach(b => {
+      b.style.borderColor = 'rgba(10,31,20,0.15)';
+      b.style.background = 'white';
+      b.style.color = '#2d5040';
+    });
+    const box = e.target.nextElementSibling;
+    if (box) {
+      box.style.borderColor = 'var(--green-700)';
+      box.style.background = 'rgba(26,107,60,0.05)';
+      box.style.color = 'var(--green-900)';
+    }
+  }
+});
+// Highlight first payment option on load
+setTimeout(() => {
+  const firstPayBox = document.querySelector('.payment-opt-box');
+  if (firstPayBox) {
+    firstPayBox.style.borderColor = 'var(--green-700)';
+    firstPayBox.style.background = 'rgba(26,107,60,0.05)';
+    firstPayBox.style.color = 'var(--green-900)';
+  }
+}, 100);
+
+function submitForm() {
+  const name = document.getElementById('f-name').value.trim();
+  const phone = document.getElementById('f-phone').value.trim();
+  const country = document.getElementById('f-country').value;
+  const program = document.getElementById('f-program').value;
+  const schedule = document.getElementById('f-schedule').value;
+  const days = document.getElementById('f-days').value;
+  const payment = document.querySelector('input[name="payment"]:checked')?.value || 'Not specified';
+  const notes = document.getElementById('f-notes').value.trim() || '-';
+
+  if (!name || !phone || !country || !program) {
+    alert(currentLang === 'ar' ? 'يرجى إكمال جميع الحقول المطلوبة.' : 'Please complete all required fields.');
+    return;
+  }
+
+  const msg = `🕌 *New Student Registration*
+━━━━━━━━━━━━━━━━━━━━
+
+👤 *Full Name:* ${name}
+📱 *WhatsApp Number:* ${phone}
+🌍 *Country:* ${country}
+
+📚 *Program:* ${program}
+🕐 *Preferred Schedule:* ${schedule}
+📅 *Preferred Days:* ${days}
+
+💳 *Payment Method:* ${payment}
+
+📝 *Additional Notes:*
+${notes}
+
+━━━━━━━━━━━━━━━━━━━━
+_Sent from The Quranic Gateway Website_`;
+
+  const url = `https://wa.me/201008394649?text=${encodeURIComponent(msg)}`;
+  window.open(url, '_blank');
+}
+
+// ================== FAQ ACCORDION ==================
+function toggleFaq(btn) {
+  const item = btn.parentElement;
+  const content = item.querySelector('.faq-content');
+  const icon = btn.querySelector('.faq-icon');
+  const isOpen = item.classList.contains('open');
+
+  // Close all
+  document.querySelectorAll('.faq-item').forEach(i => {
+    i.classList.remove('open');
+    i.querySelector('.faq-content').classList.remove('open');
+    i.querySelector('.faq-icon').textContent = '+';
+    i.querySelector('.faq-icon').style.transform = 'rotate(0deg)';
+  });
+
+  if (!isOpen) {
+    item.classList.add('open');
+    content.classList.add('open');
+    icon.textContent = '×';
+    icon.style.transform = 'rotate(90deg)';
+  }
+}
+
+// ================== SCROLL ANIMATIONS ==================
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, { threshold: 0.1 });
+
+document.querySelectorAll('.service-card, .feature-card, .testimonial-card, .glass-light').forEach(el => {
+  el.style.opacity = '0';
+  el.style.transform = 'translateY(20px)';
+  el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+  observer.observe(el);
+});
+
+// LTR hero line
+const line = document.getElementById('hero-line');
+if (line) {
+  line.style.marginLeft = window.innerWidth >= 1024 ? '0' : 'auto';
+  line.style.marginRight = 'auto';
+}
+</script>
+
+</body>
+</html>
